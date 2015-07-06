@@ -88,6 +88,10 @@ available apis:
 """
   end
 
+  defp on_app("export", _opts, app, [], _, apis, script, remoter) do
+    :io.format "~p", [{app, apis, script, remoter}]
+  end
+
   defp on_app(command, opts, app, [api], payload, apis, script, remoter) do
     api_map = apis[api] || fail("application: #{app}: api #{api} not found")
     IO.puts("link: #{app}/#{api}")

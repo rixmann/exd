@@ -13,7 +13,7 @@ defmodule Exd.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger, :ecto, :ecto_migrate, :apix],
+    [applications: [:logger, :ecto, :ecto_migrate, :ecto_export, :apix],
      mod: {Exd, []}]
   end
 
@@ -41,6 +41,9 @@ defmodule Exd.Mixfile do
      {:poison, "~> 1.4.0"},
 
      {:earmark, "~> 0.1", only: :dev},
-     {:ex_doc, "~> 0.7", only: :dev}]
+     {:ex_doc, "~> 0.7", only: :dev},
+     {:ecto_export, path: "/home/orixmann/git/ecto_export"},
+     {:exrun, github: "liveforeverx/exrun"}
+    ]
   end
 end
