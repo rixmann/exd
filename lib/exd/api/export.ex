@@ -11,18 +11,40 @@ defmodule Exd.Api.Export do
       @tech_name "export"
       @moduledoc "Export api"
 
+      api "get", :__get__
       api "post", :__post__
       api "options", :__options__
 
       def_service unquote(service)
 
       @doc """
-      Method: `post`.
-      Export all data from an application
+      Method: `get`.
+      Retrieve the status of a former started export/import job.
 
       ## Parameters
 
+      * `:id` - integer, required, identifier of the import/export job
+
+      ## Results
+
+      * `:status`
+
+      """
+      def __get__(args), do: Ecto.Export.check_job(args)
+
+      @doc """
+      Method: `post`.
+      Export/Import all data from an application
+
+      ## Parameters
+
+      * `:filename` - string, required, name of the filename to export/import to/from
+      * `:import` - boolean, optional, if set true an import will be performed instead of an export
       * `:models` - list, optional, a list of models to be exported
+
+      ## Results
+
+      * `:id` - integer, identifier of the import/export job
 
       """
       def __post__(args), do: Ecto.Export.export(unquote(repo), unquote(models), args)
