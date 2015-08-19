@@ -42,7 +42,7 @@ defmodule Exd.Mixfile do
 
      {:earmark, "~> 0.1", only: :dev},
      {:ex_doc, "~> 0.7", only: :dev},
-     {:ecto_export, github: "xerions/ecto_export"},
+     {:ecto_export, github: "rixmann/ecto_export", ref: "753985898c787ce2dc38af11bbf85d5486f7c33b"},
      {:exrun, github: "liveforeverx/exrun"}
     ]
   end
