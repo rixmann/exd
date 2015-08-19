@@ -30,7 +30,7 @@ defmodule Exd.Mixfile do
     [{:postgrex, ">= 0.0.0", optional: true},
      {:mariaex,  ">= 0.1.0", optional: true},
      {:ecto_it,  "~> 0.1.0", optional: true},
-     {:jsx,      "~> 2.6.2"},
+     {:jsx,      ">= 2.6.2"},
      {:hello, github: "travelping/hello", branch: "hello_v3", optional: true},
 
      {:lager, "~> 2.1.1", override: true},
@@ -42,7 +42,7 @@ defmodule Exd.Mixfile do
 
      {:earmark, "~> 0.1", only: :dev},
      {:ex_doc, "~> 0.7", only: :dev},
-     {:ecto_export, path: "/home/orixmann/git/ecto_export"},
+     {:ecto_export, github: "xerions/ecto_export"},
      {:exrun, github: "liveforeverx/exrun"}
     ]
   end
